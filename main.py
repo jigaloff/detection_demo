@@ -35,4 +35,26 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='127.0.0.1', debug=True)
+
+    cfgfile = "cfg/yolov3.cfg"
+    weightsfile = "yolov3.weights"
+    num_classes = 80
+    start = 0
+    CUDA = torch.cuda.is_available()
+
+    bbox_attrs = 5 + num_classes
+
+    model = Darknet(cfgfile)
+    model.load_weights(weightsfile)
+
+    model.net_info["height"] = args.reso
+    inp_dim = int(model.net_info["height"])
+
+    assert inp_dim % 32 == 0
+    assert inp_dim > 32
+
+    if CUDA:
+        model.cuda()
+
+    model.eval()
