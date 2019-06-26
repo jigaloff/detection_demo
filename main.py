@@ -127,4 +127,4 @@ if __name__ == '__main__':
 
     model.eval()
 
-    app.run(host='127.0.0.1', debug=True)
+    app.run(host='34.90.61.160', debug=True)
