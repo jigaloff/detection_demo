@@ -1,21 +1,23 @@
 #!/usr/bin/env python
 
 from __future__ import division
+
+import argparse
+import pickle as pkl
+# import pandas as pd
+import random
+
+# import numpy as np
+import cv2
 # import time
 # import torch.nn as nn
 import torch
-from torch.autograd import Variable
-import numpy as np
-import cv2
-from util import *
-from darknet import Darknet
-from preprocess import prep_image, inp_to_image
-import pandas as pd
-import random
-import argparse
-import pickle as pkl
-from flask import Flask, render_template, Response
 from camera import VideoCamera
+from darknet import Darknet
+from flask import Flask, render_template, Response
+from preprocess import prep_image
+from torch.autograd import Variable
+from util import *
 
 
 def prep_image(img, inp_dim):
@@ -30,18 +32,20 @@ def prep_image(img, inp_dim):
     img_ = torch.from_numpy(img_).float().div(255.0).unsqueeze(0)
     return img_, orig_im, dim
 
+
 def write(x, img):
     c1 = tuple(x[1:3].int())
     c2 = tuple(x[3:5].int())
     cls = int(x[-1])
     label = "{0}".format(classes[cls])
     color = random.choice(colors)
-    cv2.rectangle(img, c1, c2,color, 1)
-    t_size = cv2.getTextSize(label, cv2.FONT_HERSHEY_PLAIN, 1 , 1)[0]
+    cv2.rectangle(img, c1, c2, color, 1)
+    t_size = cv2.getTextSize(label, cv2.FONT_HERSHEY_PLAIN, 1, 1)[0]
     c2 = c1[0] + t_size[0] + 3, c1[1] + t_size[1] + 4
-    cv2.rectangle(img, c1, c2,color, -1)
-    cv2.putText(img, label, (c1[0], c1[1] + t_size[1] + 4), cv2.FONT_HERSHEY_PLAIN, 1, [225,255,255], 1);
+    cv2.rectangle(img, c1, c2, color, -1)
+    cv2.putText(img, label, (c1[0], c1[1] + t_size[1] + 4), cv2.FONT_HERSHEY_PLAIN, 1, [225, 255, 255], 1);
     return img
+
 
 def arg_parse():
     """
@@ -55,17 +59,20 @@ def arg_parse():
                         default="160", type=str)
     return parser.parse_args()
 
+
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 def gen(camera):
     i = 0
-    videofile = 'video.avi'
-    classes = load_classes('data/coco.names')
-    colors = pkl.load(open("pallete", "rb"))
+    # videofile = 'video.avi'
+    # classes = load_classes('data/coco.names')
+    # colors = pkl.load(open("pallete", "rb"))
 
     while True:
         success, frame = camera.video.read()
@@ -76,7 +83,7 @@ def gen(camera):
                 img = img.cuda()
 
             output = model(Variable(img), CUDA)
-            output = write_results(output, confidence, num_classes, nms = True, nms_conf = nms_thesh)
+            output = write_results(output, confidence, num_classes, nms=True, nms_conf=nms_thesh)
 
             output[:, 1:5] = torch.clamp(output[:, 1:5], 0.0, float(inp_dim)) / inp_dim
             output[:, [1, 3]] *= frame.shape[1]
@@ -89,6 +96,7 @@ def gen(camera):
 
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
 
 @app.route('/video_feed')
 def video_feed():
@@ -128,3 +136,4 @@ if __name__ == '__main__':
     model.eval()
 
     app.run(host='127.0.0.1', debug=True)
+    # app.run(host='0.0.0.0', debug=True)
