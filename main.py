@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 from __future__ import division
-import time
-import torch.nn as nn
+# import time
+# import torch.nn as nn
+import torch
 from torch.autograd import Variable
 import numpy as np
 import cv2
