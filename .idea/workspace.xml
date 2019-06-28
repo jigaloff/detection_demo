@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3a318771-6651-4801-900d-38c1925083c3" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/templates/capture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test2.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561656142820</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Test">
+      <created>1561748441408</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561748441408</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,7 +130,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Detection Demo" />
     <MESSAGE value="Local demo final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Local demo final" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="masterDetails">
     <states>
