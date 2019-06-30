@@ -27,18 +27,15 @@
 <!--  </div>-->
 </div>
         <script>
-            var ws = new WebSocket("ws://127.0.0.1:8000/"),
-                messages = document.createElement('ul');
-<!--            ws.onmessage = function (event) {-->
-<!--                var messages = document.getElementsByTagName('ul')[0],-->
-<!--                    message = document.createElement('li'),-->
-<!--                    content = document.createTextNode(event.data);-->
-<!--                message.appendChild(content);-->
-<!--                messages.appendChild(message);-->
+            var ws = new WebSocket("ws://127.0.0.1:5000/test");
+            ws.onopen = function () {
+              console.log("Openened connection to websocket");
+            };
 
-            ws.addEventListener('open', function (event) {
-                ws.send('Hello Server!');
-            });
+            timer = setInterval(
+                    function () {
+                        ws.send("test");
+                    }, 250);
         </script>
 <button id="sendbutton">Send Message</button>
 </body>

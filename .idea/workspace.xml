@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a318771-6651-4801-900d-38c1925083c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/capture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test2.html" afterDir="false" />
+    <list default="true" id="3a318771-6651-4801-900d-38c1925083c3" name="Default Changelist" comment="Revert &quot;Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket&quot;&#10;&#10;This reverts commit 5dc5685f">
+      <change afterPath="$PROJECT_DIR$/static/client.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jquery-3.4.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/socket.io.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/capture.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/capture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/connect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/test2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/test4.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test4.html" afterDir="false" />
     </list>
+    <list id="8047f223-df05-4c68-8272-96fd00ee2e73" name="Simple_Web_Socket_Server &amp; JS websocket" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/test3.html" beforeDir="false" />
+    </list>
+    <list id="db3f79c4-f6fe-420a-b6fb-90be8c514c3b" name="Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +29,14 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="detection_demo" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -30,6 +54,37 @@
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="b517f87d-36a5-4055-83bf-66d65cd34a56" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="3" end1="6" start2="3" end2="21" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="7" end1="7" start2="22" end2="23" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="15" end1="15" start2="31" end2="39" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="32" end1="32" start2="56" end2="87" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="36" end1="36" start2="91" end2="92" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="37" end1="39" start2="93" end2="95" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="47" end1="47" start2="103" end2="114" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="60" end1="61" start2="127" end2="170" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="82" end1="82" start2="191" end2="218" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="85" end1="85" start2="221" end2="223" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="113" end1="114" start2="251" end2="266" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="133" end1="134" start2="285" end2="298" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/main.py">
+      <ranges>
+        <range start1="16" end1="17" start2="16" end2="17" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="20" end1="21" start2="20" end2="21" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="63" end1="64" start2="63" end2="65" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="67" end1="68" start2="68" end2="87" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="69" end1="69" start2="88" end2="101" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="72" end1="75" start2="104" end2="104" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="104" end1="105" start2="133" end2="133" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="137" end1="138" start2="165" end2="166" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="139" end1="139" start2="167" end2="169" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="1NEpQVGgZxlZpWAmmTVokFELbXS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -111,7 +166,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561748441408</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Test">
+      <created>1561748644993</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561748644993</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket">
+      <created>1561831676829</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561831676829</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,7 +200,19 @@
     <MESSAGE value="Detection Demo" />
     <MESSAGE value="Local demo final" />
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/WebSocServ.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

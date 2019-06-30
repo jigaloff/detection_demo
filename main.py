@@ -14,7 +14,7 @@ import cv2
 import torch
 from camera import VideoCamera
 from darknet import Darknet
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request, session
 from preprocess import prep_image
 from torch.autograd import Variable
 from util import *
@@ -65,8 +65,39 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', async_mode=socketio.async_mode)
 
+# @app.route('/test')
+# def test():
+#     print('Start test')
+#     send('test', {'msg': 'hello!'}, broadcast=True)
+#     # send({'Data':'Test Server to Client'}, room=current_user.id)
+#     print('Send Message to client complite')
+#     return ""
+
+@socketio.on('connect')
+def test_connect():
+    emit('after connect',  {'data':'Lets dance'})
+
+@socketio.on('message')
+def handle_message(message):
+    # emit('message', {'data':'Lets dance'})
+    # print(message)
+    pass
+
+@socketio.on('blob')
+def handle_blob(blob):
+    emit('blob', blob)
+    # print('received json: ' + str(blob))
+    pass
+
+# @app.route('/echo')
+# def get_websocket():
+#     return render_template('index.html')
+#
+# @app.route('/echo_test', methods=['GET'])
+# def echo_test():
+#     print()
 
 def gen(camera):
     i = 0
@@ -103,7 +134,6 @@ def video_feed():
     return Response(gen(VideoCamera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
-
 if __name__ == '__main__':
 
     cfgfile = "cfg/yolov3.cfg"
@@ -135,5 +165,7 @@ if __name__ == '__main__':
 
     model.eval()
 
-    app.run(host='127.0.0.1', debug=True)
+    # app.run(host='127.0.0.1', debug=True)
     # app.run(host='0.0.0.0', debug=True)
+    # socketio.run(app, host='0.0.0.0')
+    socketio.run(app, host='127.0.0.1')
