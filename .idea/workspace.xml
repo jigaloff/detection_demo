@@ -4,9 +4,6 @@
     <list default="true" id="3a318771-6651-4801-900d-38c1925083c3" name="Default Changelist" comment="Revert &quot;Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket&quot;&#10;&#10;This reverts commit 5dc5685f">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/test.js" afterDir="false" />
     </list>
     <list id="8047f223-df05-4c68-8272-96fd00ee2e73" name="Simple_Web_Socket_Server &amp; JS websocket" comment="" />
     <list id="db3f79c4-f6fe-420a-b6fb-90be8c514c3b" name="Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket" comment="" />
@@ -277,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561986174290</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Deploy">
+      <created>1561997553773</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1561997553773</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,7 +308,8 @@
     <MESSAGE value="Complite Send PNG to client from blob (bytes string)" />
     <MESSAGE value="Set address of server in variable" />
     <MESSAGE value="Ready to deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ready to deploy" />
+    <MESSAGE value="Deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deploy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
