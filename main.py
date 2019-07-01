@@ -88,7 +88,7 @@ def handle_message(message):
 @socketio.on('blob')
 def handle_blob(blob):
     emit('blob', blob)
-    # print('received json: ' + str(blob))
+    # print('received : ' + str(blob))
     pass
 
 # @app.route('/echo')
