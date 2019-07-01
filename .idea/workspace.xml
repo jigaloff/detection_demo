@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a318771-6651-4801-900d-38c1925083c3" name="Default Changelist" comment="Revert &quot;Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket&quot;&#10;&#10;This reverts commit 5dc5685f">
-      <change afterPath="$PROJECT_DIR$/static/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/video.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/capture.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
     </list>
     <list id="8047f223-df05-4c68-8272-96fd00ee2e73" name="Simple_Web_Socket_Server &amp; JS websocket" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -55,35 +47,11 @@
     <option name="defaultAccountId" value="b517f87d-36a5-4055-83bf-66d65cd34a56" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="6" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="5" end1="5" start2="7" end2="8" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="6" end1="6" start2="9" end2="13" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="52" end1="63" start2="59" end2="72" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="67" end1="74" start2="76" end2="86" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="80" end1="80" start2="92" end2="93" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="81" end1="83" start2="94" end2="96" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="91" end1="91" start2="104" end2="115" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="104" end1="105" start2="128" end2="171" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
-        <range start1="126" end1="126" start2="192" end2="219" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
-        <range start1="129" end1="129" start2="222" end2="224" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
-        <range start1="192" end1="193" start2="287" end2="295" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="216" end1="217" start2="318" end2="320" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/main.py">
       <ranges>
         <range start1="22" end1="22" start2="22" end2="23" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
-        <range start1="23" end1="23" start2="24" end2="26" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="63" end1="63" start2="66" end2="109" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="65" end1="66" start2="111" end2="114" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
-        <range start1="69" end1="70" start2="117" end2="124" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="71" end1="78" start2="125" end2="133" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="82" end1="117" start2="137" end2="137" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="122" end1="125" start2="142" end2="143" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="131" end1="135" start2="149" end2="158" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-        <range start1="167" end1="171" start2="190" end2="192" changelist="3a318771-6651-4801-900d-38c1925083c3" />
+        <range start1="110" end1="111" start2="111" end2="114" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
+        <range start1="187" end1="188" start2="190" end2="190" changelist="3a318771-6651-4801-900d-38c1925083c3" />
       </ranges>
     </file>
   </component>
@@ -221,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561972649088</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Set address of server in variable">
+      <created>1561984255074</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1561984255074</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,7 +221,8 @@
     <MESSAGE value="Complete pipeline for video client-server-client&#10;Show video" />
     <MESSAGE value="Show image from blob" />
     <MESSAGE value="Complite Send PNG to client from blob (bytes string)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complite Send PNG to client from blob (bytes string)" />
+    <MESSAGE value="Set address of server in variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set address of server in variable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
