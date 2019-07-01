@@ -21,9 +21,10 @@ from io import BytesIO
 from torch.autograd import Variable
 from util import *
 from flask_socketio import SocketIO, send, emit
+from werkzeug.contrib.fixers import ProxyFix
 
-host = '0.0.0.0'
-port = 5000
+host = '34.90.61.160 '
+port = 8000
 
 def prep_image(img, inp_dim):
     """
@@ -188,4 +189,5 @@ if __name__ == '__main__':
 
     model.eval()
 
-    socketio.run(app, host=host)
+    app.wsgi_app = ProxyFix(app.wsgi_app)
+    socketio.run(app, host='0.0.0.0')

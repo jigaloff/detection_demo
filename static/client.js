@@ -24,7 +24,7 @@ if (navigator.getUserMedia) {
    console.log("getUserMedia not supported");
 };
 
-var socket = io.connect('http://127.0.0.1:5000');
+var socket = io.connect('http://34.90.61.160 :8000');
 
 socket.on('connect', function() {
     console.log("Openened connection to websocket");
