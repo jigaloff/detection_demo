@@ -21,6 +21,8 @@ from io import BytesIO
 from torch.autograd import Variable
 from util import *
 
+host = '127.0.0.1'
+port = 5000
 
 def prep_image(img, inp_dim):
     """
@@ -61,78 +63,96 @@ def arg_parse():
                         default="160", type=str)
     return parser.parse_args()
 
+def gen(camera):
+    while True:
+        success, frame = camera.video.read()
+
+        img, orig_im, dim = prep_image(frame, inp_dim)
+
+        if CUDA:
+            img = img.cuda()
+
+        output = model(Variable(img), CUDA)
+        output = write_results(output, confidence, num_classes, nms=True, nms_conf=nms_thesh)
+
+        output[:, 1:5] = torch.clamp(output[:, 1:5], 0.0, float(inp_dim)) / inp_dim
+        output[:, [1, 3]] *= frame.shape[1]
+        output[:, [2, 4]] *= frame.shape[0]
+
+        list(map(lambda x: write(x, orig_im), output))
+
+        frame = camera.get_frame(frame)
+
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+def gen_png(frame):
+
+        frame = cv2.cvtColor(np.array(frame), cv2.COLOR_RGB2BGR)
+
+        img, orig_im, dim = prep_image(frame, inp_dim)
+
+        if CUDA:
+            img = img.cuda()
+
+        output = model(Variable(img), CUDA)
+        output = write_results(output, confidence, num_classes, nms=True, nms_conf=nms_thesh)
+
+        output[:, 1:5] = torch.clamp(output[:, 1:5], 0.0, float(inp_dim)) / inp_dim
+        output[:, [1, 3]] *= frame.shape[1]
+        output[:, [2, 4]] *= frame.shape[0]
+
+        list(map(lambda x: write(x, orig_im), output))
+
+        frame = Image.fromarray(frame)
+        return (frame) # Format: PIL image
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html', async_mode=socketio.async_mode)
+    return render_template('index.html', async_mode=socketio.async_mode, \
+                           serv_addr = host, port = port)
 
-# @app.route('/test')
-# def test():
-#     print('Start test')
-#     send('test', {'msg': 'hello!'}, broadcast=True)
-#     # send({'Data':'Test Server to Client'}, room=current_user.id)
-#     print('Send Message to client complite')
-#     return ""
+@app.route('/test')
+def test():
+    return render_template('test.html', async_mode=socketio.async_mode, \
+                           serv_addr = host, port = port)
+
+@app.route('/video')
+def video():
+    return render_template('video.html', async_mode=socketio.async_mode)
+
+@app.route('/video_feed')
+def video_feed():
+    return Response(gen(VideoCamera()),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @socketio.on('connect')
 def test_connect():
     emit('after connect',  {'data':'Lets dance'})
 
-@socketio.on('message')
-def handle_message(message):
-    # emit('message', {'data':'Lets dance'})
-    # print(message)
-    pass
-
-
-
-def gen(camera):
-    i = 0
-
-    while True:
-        success, frame = camera.video.read()
-        if i == 1:
-            img, orig_im, dim = prep_image(frame, inp_dim)
-
-            if CUDA:
-                img = img.cuda()
-
-            output = model(Variable(img), CUDA)
-            output = write_results(output, confidence, num_classes, nms=True, nms_conf=nms_thesh)
-
-            output[:, 1:5] = torch.clamp(output[:, 1:5], 0.0, float(inp_dim)) / inp_dim
-            output[:, [1, 3]] *= frame.shape[1]
-            output[:, [2, 4]] *= frame.shape[0]
-
-            list(map(lambda x: write(x, orig_im), output))
-            i = 0
-        i += 1
-        frame = camera.get_frame(frame)
-
-        return (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-
-
 
 @socketio.on('blob')
 def handle_blob(blob):
     image = Image.open(BytesIO(blob))
-    # print(image.size)
-    # print(type(image))
-    image = gen(image)
+    image = gen_png(image)
 
     b = BytesIO()
     image.save(b, 'png')
     image = b.getvalue()
     emit('blob', image)
 
-@app.route('/video_feed')
-def video_feed():
-    return Response(gen(VideoCamera()),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
+@socketio.on('test')
+def handle_blob(blob):
+    image = Image.open(BytesIO(blob))
+    b = BytesIO()
+    image.save(b, 'png')
+    image = b.getvalue()
+    emit('test', image)
+
+
 
 if __name__ == '__main__':
 
@@ -165,7 +185,5 @@ if __name__ == '__main__':
 
     model.eval()
 
-    # app.run(host='127.0.0.1', debug=True)
-    # app.run(host='0.0.0.0', debug=True)
-    # socketio.run(app, host='0.0.0.0')
-    socketio.run(app, host='127.0.0.1')
+    # socketio.run(app, host='0.0.0.0', debug=False)
+    socketio.run(app, host=host)

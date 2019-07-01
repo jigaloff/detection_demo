@@ -6,11 +6,15 @@
 </head>
 <body>
     <div>
-        <video id="live" visibility: hidden width="320" height="240" autoplay style="display: inline; ; visibility: hidden"></video>
+        <video id="live" width="320" height="240" autoplay style="display: inline; ; visibility: hidden"></video>
         <canvas width="320" id="canvas" height="240" style="display: inline;"></canvas>
         <img id="image" style="display: inline;"/>
     </div>
-<script src="jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
-<script src="../static/client.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+<!--<script src="../static/socket.io.js"></script>-->
+<!--<script src="../static/test.js"></script>-->
+    <script> serv_addr = "https://{{ serv_addr }}:{{ port }}" ></script>
+    <script src="{{url_for('static', filename='jquery-3.4.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='socket.io.js')}}"></script>
+    <script src="{{url_for('static', filename='test.js')}}"></script>
 </body>

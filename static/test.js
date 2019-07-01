@@ -41,20 +41,16 @@ function blob2canvas(blob){
 }
 var blobs
 
-socket.on('blob', function(blob) {
+socket.on('test', function(blob) {
     blob = new Blob([blob], {type: "image/jpeg"});
     blob2canvas(blob)
 });
-i = 0
+
 timer = setInterval(
         function () {
             ctx.drawImage(video, 0, 0, 320, 240);
             var canvas = document.getElementById('canvas');
-            if (i == 4){
             canvas.toBlob(function(blob) {
-              socket.emit('blob', blob);
+              socket.emit('test', blob);
             }), 'image/jpg';
-            i = 0;
-            };
-            i++;
         }, 250);
