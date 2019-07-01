@@ -42,7 +42,7 @@ function blob2canvas(blob){
 var blobs
 
 socket.on('blob', function(blob) {
-    blob = new Blob([blob], {type: "image/png"});
+    blob = new Blob([blob], {type: "image/jpeg"});
     blob2canvas(blob)
 });
 
@@ -53,5 +53,5 @@ timer = setInterval(
             canvas.toBlob(function(blob) {
               socket.emit('blob', blob);
 //              console.log(blob);
-            });
+            }), 'image/jpg';
         }, 250);

@@ -16,6 +16,7 @@ from camera import VideoCamera
 from darknet import Darknet
 from flask import Flask, render_template, Response, request, session
 from preprocess import prep_image
+from io import BytesIO
 from torch.autograd import Variable
 from util import *
 
@@ -85,19 +86,26 @@ def handle_message(message):
     # print(message)
     pass
 
+import base64
+from PIL import Image
+from io import BytesIO
+import matplotlib.pyplot as plt
+
 @socketio.on('blob')
 def handle_blob(blob):
+    # print(blob)
     emit('blob', blob)
-    # print('received : ' + str(blob))
-    pass
+    image = Image.open(BytesIO(blob))
+    print(image.size)
+    print(type(image))
 
-# @app.route('/echo')
-# def get_websocket():
-#     return render_template('index.html')
-#
-# @app.route('/echo_test', methods=['GET'])
-# def echo_test():
-#     print()
+    # blob = np.genfromtxt(BytesIO(blob))
+    # blob = np.array(blob)
+    img = cv2.cvtColor(np.array(image), cv2.COLOR_BGR2RGB)
+    plt.imshow(img, cmap='gray', interpolation='bicubic')
+    plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
+    plt.show()
+
 
 def gen(camera):
     i = 0
@@ -125,7 +133,7 @@ def gen(camera):
         i += 1
         frame = camera.get_frame(frame)
 
-        yield (b'--frame\r\n'
+        return (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 
