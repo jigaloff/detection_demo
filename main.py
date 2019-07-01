@@ -12,6 +12,7 @@ import cv2
 # import time
 # import torch.nn as nn
 import torch
+from PIL import Image
 from camera import VideoCamera
 from darknet import Darknet
 from flask import Flask, render_template, Response, request, session
@@ -86,32 +87,10 @@ def handle_message(message):
     # print(message)
     pass
 
-import base64
-from PIL import Image
-from io import BytesIO
-import matplotlib.pyplot as plt
-
-@socketio.on('blob')
-def handle_blob(blob):
-    # print(blob)
-    emit('blob', blob)
-    image = Image.open(BytesIO(blob))
-    print(image.size)
-    print(type(image))
-
-    # blob = np.genfromtxt(BytesIO(blob))
-    # blob = np.array(blob)
-    img = cv2.cvtColor(np.array(image), cv2.COLOR_BGR2RGB)
-    plt.imshow(img, cmap='gray', interpolation='bicubic')
-    plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
-    plt.show()
 
 
 def gen(camera):
     i = 0
-    # videofile = 'video.avi'
-    # classes = load_classes('data/coco.names')
-    # colors = pkl.load(open("pallete", "rb"))
 
     while True:
         success, frame = camera.video.read()
@@ -136,6 +115,19 @@ def gen(camera):
         return (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
+
+
+@socketio.on('blob')
+def handle_blob(blob):
+    image = Image.open(BytesIO(blob))
+    # print(image.size)
+    # print(type(image))
+    image = gen(image)
+
+    b = BytesIO()
+    image.save(b, 'png')
+    image = b.getvalue()
+    emit('blob', image)
 
 @app.route('/video_feed')
 def video_feed():
