@@ -4,9 +4,10 @@
 Modified to support streaming out with webcams, and not just raw JPEGs.
 
 ### Usage
-1. Install Python dependencies: cv2, flask and other with requirements.txt
-2. Run "python main.py".
-3. Navigate the browser to the local webpage.
+1. Download 'wget https://pjreddie.com/media/files/yolov3.weights'
+2. Install Python dependencies: cv2, flask and other with requirements.txt
+3. Run "python main.py".
+4. Navigate the browser to the local webpage.
 
 ###
 http://localhost/video - recognize on local machine without net
