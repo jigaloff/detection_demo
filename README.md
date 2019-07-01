@@ -8,16 +8,16 @@
 3. wget https://pjreddie.com/media/files/yolov3.weights
 2. Install packages
 
-conda install -c menpo opencv
-conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
-conda install -c anaconda flask
-conda install -c conda-forge flask-socketio
+conda install -c menpo opencv;
+conda install pytorch torchvision cudatoolkit=10.0 -c pytorch;
+conda install -c anaconda flask;
+conda install -c conda-forge flask-socketio;
     For SSL
-conda create --name py36 python=3.6
-sudo conda install python=3.6.8
-conda activate py36
-conda install -c anaconda gunicorn
-conda install -c conda-forge eventlet
+conda create --name py36 python=3.6;
+sudo conda install python=3.6.8;
+conda activate py36;
+conda install -c anaconda gunicorn;
+conda install -c conda-forge eventlet;
 
 3. Run "python main.py".
     For SSL
