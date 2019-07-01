@@ -5,6 +5,7 @@ from __future__ import division
 import argparse
 import pickle as pkl
 # import pandas as pd
+# import pandas as pd
 import random
 
 # import numpy as np
@@ -176,7 +177,7 @@ if __name__ == '__main__':
     model = Darknet(cfgfile)
     model.load_weights(weightsfile)
 
-    model.net_info["height"] = args.reso
+    model.net_info["height"] = args.reso # Namespace(confidence=0.25, nms_thresh=0.4, reso='160')
     inp_dim = int(model.net_info["height"])
     classes = load_classes('data/coco.names')
     colors = pkl.load(open("pallete", "rb"))
@@ -189,5 +190,5 @@ if __name__ == '__main__':
 
     model.eval()
 
-    app.wsgi_app = ProxyFix(app.wsgi_app)
-    socketio.run(app, host='0.0.0.0')
+    # app.wsgi_app = ProxyFix(app.wsgi_app) # For ssl
+    socketio.run(app, host='127.0.0.1')
