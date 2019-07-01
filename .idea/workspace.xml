@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a318771-6651-4801-900d-38c1925083c3" name="Default Changelist" comment="Revert &quot;Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket&quot;&#10;&#10;This reverts commit 5dc5685f">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="3a318771-6651-4801-900d-38c1925083c3" name="Default Changelist" comment="Revert &quot;Simple_Web_Socket_Server &amp; test4.HTMP with JS websocket&quot;&#10;&#10;This reverts commit 5dc5685f" />
     <list id="8047f223-df05-4c68-8272-96fd00ee2e73" name="Simple_Web_Socket_Server &amp; JS websocket" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -46,15 +44,6 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="b517f87d-36a5-4055-83bf-66d65cd34a56" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/main.py">
-      <ranges>
-        <range start1="22" end1="22" start2="22" end2="23" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
-        <range start1="110" end1="111" start2="111" end2="114" changelist="8047f223-df05-4c68-8272-96fd00ee2e73" />
-        <range start1="187" end1="188" start2="190" end2="190" changelist="3a318771-6651-4801-900d-38c1925083c3" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectId" id="1NEpQVGgZxlZpWAmmTVokFELbXS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -94,7 +83,49 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="WebSocClient" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="detection_demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebSocClient.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="WebSocServ" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="detection_demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebSocServ.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="detection_demo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,9 +147,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python">
+      <module name="detection_demo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/tfObjWebrtc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.server" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.WebSocClient" />
+      <item itemvalue="Python.WebSocServ" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.WebSocServ" />
+        <item itemvalue="Python.WebSocClient" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561984255074</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ready to deploy">
+      <created>1561984310768</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1561984310768</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,7 +289,8 @@
     <MESSAGE value="Show image from blob" />
     <MESSAGE value="Complite Send PNG to client from blob (bytes string)" />
     <MESSAGE value="Set address of server in variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set address of server in variable" />
+    <MESSAGE value="Ready to deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ready to deploy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

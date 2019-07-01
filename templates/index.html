@@ -1,9 +1,22 @@
 <html>
 <head>
-    <title>Video Streaming Demonstration</title>
+    <title>Video Recognizing Demonstration</title>
+
 </head>
 <body>
-<h1>Video Streaming Demonstration</h1>
-<img id="bg" src="{{ url_for('video_feed') }}">
+<h1>Video Recognizing Demonstration</h1>
+    <div class="camera">
+        <p><canvas width="320" id="canvas" height="240" style="display: inline;"></canvas>Original video</p>
+    </div>
+    <div>
+         <p><img id="image" style="display: inline;"/>Video from recognize server</p>
+         <video id="live" width="320" height="240" autoplay style="display: inline; ; visibility: hidden"></video>
+    </div>
+
+    <script> serv_addr = "https://{{ serv_addr }}:{{ port }}" ></script>
+    <script src="{{url_for('static', filename='jquery-3.4.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='socket.io.js')}}"></script>
+    <script src="{{url_for('static', filename='client.js')}}"></script>
+
 </body>
 </html>

@@ -20,6 +20,7 @@ from preprocess import prep_image
 from io import BytesIO
 from torch.autograd import Variable
 from util import *
+from flask_socketio import SocketIO, send, emit
 
 host = '127.0.0.1'
 port = 5000
@@ -108,7 +109,9 @@ def gen_png(frame):
         return (frame) # Format: PIL image
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
+i = 0
 
 @app.route('/')
 def index():
