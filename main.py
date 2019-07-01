@@ -22,7 +22,7 @@ from torch.autograd import Variable
 from util import *
 from flask_socketio import SocketIO, send, emit
 
-host = '127.0.0.1'
+host = '0.0.0.0'
 port = 5000
 
 def prep_image(img, inp_dim):
